@@ -8,7 +8,7 @@ const port = 3000
 const base_url = "https://api.openai.com/v1/chat/completions"
 const config = {
     headers: {
-        Authorization: `Bearer ${api_key}`
+        Authorization: `Bearer ${/*add here*/}`
     }
 }
 
@@ -27,7 +27,7 @@ app.post("/submit", async (req, res) => {
 
     try {
         const body = {
-            "model": "gpt-3.5-turbo",
+            "model": "model for your choice",
             "messages": conversationHistory
         };
         const response = await axios.post(base_url, body, config);
