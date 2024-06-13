@@ -1,13 +1,22 @@
 import express from "express"
 import axios from "axios"
 import ejs from "ejs"
+import dotenv from "dotenv"
+
+dotenv.config();
 
 const app = express()
 const port = 3000
-//Add Key here
 const base_url = "https://api.openai.com/v1/chat/completions"
+const config = {
+    headers: {
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+        "Content-Type": "application/json"
+    }
+};
 
-//Add Configuration here
+console.log("Config Headers: ", config);
+
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -24,7 +33,7 @@ app.post("/submit", async (req, res) => {
 
     try {
         const body = {
-            "model": "model for your choice",
+            "model": "gpt-3.5-turbo",
             "messages": conversationHistory
         };
         const response = await axios.post(base_url, body, config);
