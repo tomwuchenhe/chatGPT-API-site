@@ -9,7 +9,7 @@ const port = 3000
 const base_url = "https://api.openai.com/v1/chat/completions"
 const config = {
     headers: {
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+        "Authorization": `Bearer key`,
         "Content-Type": "application/json"
     }
 };
