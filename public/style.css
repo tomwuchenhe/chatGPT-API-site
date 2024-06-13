@@ -1,0 +1,65 @@
+h1{
+    margin: 0;
+}
+.container {
+    height: 50%;
+    width: 50%;
+}
+
+#user-input{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    border-radius: 5%;
+    overflow: hidden;
+    background: linear-gradient(300deg, #b3d5e0, #ded1d3, #dc7363, #bbf060);
+    background-size: 180% 180%;
+    animation: gradient-animation 10s ease infinite;
+}
+
+.big-con {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+}
+
+.btn {
+    border-radius: 10%;
+    background-color: green;
+    color:white;
+    padding: 10px 17px;
+    border: none;
+}
+
+.btn:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+#user-put {
+    width: 50%;
+}
+  
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.move-up {
+    position: relative;
+    top: -150px
+}
