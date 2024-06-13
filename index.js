@@ -4,13 +4,10 @@ import ejs from "ejs"
 
 const app = express()
 const port = 3000
-//Add your key here 
+//Add Key here
 const base_url = "https://api.openai.com/v1/chat/completions"
-const config = {
-    headers: {
-        Authorization: `Bearer ${/*add here*/}`
-    }
-}
+
+//Add Configuration here
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
