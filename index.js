@@ -4,7 +4,7 @@ import ejs from "ejs"
 
 const app = express()
 const port = 3000
-const api_key = "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"
+//Add your key here 
 const base_url = "https://api.openai.com/v1/chat/completions"
 const config = {
     headers: {
@@ -45,11 +45,3 @@ app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`);
 });
 
-
-/*try{
-    const response = await axios.get(base_url, config)
-    console.log(response.data)
-    res.send("welcome to the index page")
-} catch (error){
-    console.log("something is wrong")
-}*/
