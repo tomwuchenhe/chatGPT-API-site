@@ -1,7 +1,6 @@
 import express from "express"
 import axios from "axios"
 import ejs from "ejs"
-import dotenv from "dotenv"
 
 dotenv.config();
 
