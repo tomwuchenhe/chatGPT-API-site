@@ -1,6 +1,4 @@
-h1{
-    margin: 0;
-}
+
 .container {
     height: 50%;
     width: 50%;
@@ -15,9 +13,6 @@ h1{
     gap:20px;
     border-radius: 5%;
     overflow: hidden;
-    background: linear-gradient(300deg, #b3d5e0, #ded1d3, #dc7363, #bbf060);
-    background-size: 180% 180%;
-    animation: gradient-animation 10s ease infinite;
 }
 
 .big-con {
@@ -36,6 +31,7 @@ h1{
     color:white;
     padding: 10px 17px;
     border: none;
+    width: 40%
 }
 
 .btn:hover {
@@ -44,18 +40,122 @@ h1{
 }
 
 #user-put {
-    width: 50%;
+    width: 72%;
 }
   
-@keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
 
+:root {
+--card-height: 65vh;
+--card-width: 65vh;
+}
+
+body {
+min-height: 100vh;
+background: #212534;
+display: flex;
+align-items: center;
+flex-direction: column;
+padding-top: 2rem;
+padding-bottom: 2rem;
+box-sizing: border-box;
+}
+
+h1 {
+color: White;
+margin-bottom: 20px;
+}
+
+.card {
+width: var(--card-width);
+height: var(--card-height);
+padding: 3px;
+position: relative;
+border-radius: 6px;
+justify-content: center;
+align-items: center;
+text-align: center;
+display: flex;
+font-size: 1.5em;
+color: rgb(88 199 250 / 0%);
+}
+
+
+
+.card::before {
+content: "";
+width: 104%;
+height: 102.5%;
+border-radius: 8px;
+background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+);
+position: absolute;
+z-index: -1;
+top: -1.25%;
+left: -2%;
+animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+position: absolute;
+content: "";
+top: calc(var(--card-height) / 6);
+left: 0;
+right: 0;
+z-index: -1;
+height: 110%;
+width: 110%;
+margin: 0 auto;
+transform: scale(0.8);
+filter: blur(calc(var(--card-height) / 6));
+background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+);
+opacity: 1;
+transition: opacity 0.5s;
+animation: spin 2.5s linear infinite;
+}
+
+@property --rotate {
+syntax: "<angle>";
+initial-value: 132deg;
+inherits: false;
+}
+
+@keyframes spin {
+0% {
+    --rotate: 0deg;
+}
+100% {
+    --rotate: 360deg;
+}
+}
+
+
+.card{
+background: linear-gradient(300deg, #b3d5e0, #ded1d3, #dc7363, #bbf060);
+background-size: 180% 180%;
+animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}
+
+p {
+    color:white;
+}
